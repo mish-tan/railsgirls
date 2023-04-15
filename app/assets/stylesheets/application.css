@@ -14,6 +14,26 @@
  *= require_self
  */
 
+.html-custom { background-color: lightgray; }
+
+ .navbar-custom {
+  background-color: pink;
+}
+
+.body-custom {
+  background-color: lightcyan;
+}
+
+.container {
+  background-color: lightcyan;
+}
+
+ body {
+  max-width: 750px;
+  color: darkslateblue;
+  margin: auto;
+ }
+
  #ideas > div {
   border-top: 1px solid #c0c0c0;
   margin-top: 30px;
