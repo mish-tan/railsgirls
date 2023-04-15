@@ -14,4 +14,9 @@
     <%= image_tag(idea.picture_url, width: 600) if idea.picture.present? %>
   </p>
 
+  <p>
+    <strong>Tags:</strong>
+    <%= idea.tags.map{ |tag| link_to "##{tag.name}", tag_path(tag)}.join(", ").html_safe %>
+  </p>
+
 </div>

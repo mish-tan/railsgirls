@@ -23,6 +23,9 @@
               <a class="nav-link <%= 'active' if current_page?(controller: 'ideas') %>" href="/ideas">Ideas</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link <%= 'active' if current_page?(controller: 'tags') %>" href="/tags">Tags</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link <%= 'active' if current_page?(controller: 'pages', action: 'info') %>" href="/pages/info">About Me</a>
             </li>
           </ul>

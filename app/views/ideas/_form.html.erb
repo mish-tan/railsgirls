@@ -27,6 +27,13 @@
   </div>
 
   <div>
+    <%= form.label :tags, style: "display: block" %>
+    <%= form.collection_select(:tag_ids, Tag.all, :id, :name,
+                              {include_blank: false, :include_hidden => false, :selected => @idea.tags.map(&:id)},
+                              {:multiple => true}) %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

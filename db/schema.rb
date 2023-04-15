@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_15_020204) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_15_064258) do
+  create_table "idea_tags", force: :cascade do |t|
+    t.integer "idea_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["idea_id"], name: "index_idea_tags_on_idea_id"
+    t.index ["tag_id"], name: "index_idea_tags_on_tag_id"
+  end
+
   create_table "ideas", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -19,4 +28,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_15_020204) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "idea_tags", "ideas"
+  add_foreign_key "idea_tags", "tags"
 end
